@@ -1,0 +1,85 @@
+// http://ionicframework.com/docs/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+.bar-button-default-ios {
+    color: #ffffff !important;
+}
+
+.side_menu_section {
+    background: rgb(0, 212, 255);
+    background: linear-gradient(163deg, rgba(0, 212, 255, 1) 0%, rgba(9, 9, 121, 1) 100%);
+    .top_part {
+        padding: 10px;
+        display: flex;
+        width: 100%;
+        height: 150px;
+        justify-content: flex-start;
+        align-items: center;
+        background-image: url(../assets/imgs/study_banner.jpg);
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        z-index: 9;
+        a {
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            right: 10px;
+            bottom: 10px;
+        }
+        &:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            left: 0;
+            height: 100%;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+        .img_section {
+            border: 2px solid #fff;
+            border-radius: 3px;
+            width: 50px;
+        }
+        .text_part {
+            padding-left: 10px;
+            p,
+            h5 {
+                margin: 0;
+                color: #fff
+            }
+        }
+    }
+    ion-list {
+        button {
+            &:first-child {
+                border-left: 3px solid #fff;
+            }
+            &.active {
+                border-left: 3px solid #fff;
+            }
+            background-color: transparent;
+            color: #fff;
+            .item-inner {
+                border-bottom: none !important;
+            }
+            ion-icon {
+                font-size: 25px;
+                vertical-align: middle;
+                margin-right: 10px !important;
+            }
+        }
+    }
+}

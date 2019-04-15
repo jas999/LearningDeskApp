@@ -1,0 +1,132 @@
+page-login,
+page-fargot-password {
+    ion-content {
+        .logo {
+            display: block;
+            margin: 10px auto;
+            width: 120px;
+        }
+
+        background-image: url(../assets/imgs/bg_1.jpg);
+
+        &:after {
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            left: 0;
+            top: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .swiper-slide {
+            width: 350px;
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            height: 209px;
+
+            @media (max-width: 380px) {
+                width: 320px;
+            }
+
+            @media (max-width: 360px) {
+                width: 290px;
+            }
+
+            @media (max-width: 320px) {
+                width: 270px;
+                height: 180px;
+            }
+
+            img {
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+
+    ion-slides {
+        height: auto;
+
+        img {
+            display: block;
+        }
+    }
+
+    ion-item {
+        background-color: transparent !important;
+        padding-left: 0 !important;
+
+        &.input-has-focus {
+            .item-inner {
+                border-color: #fff !important;
+                box-shadow: none !important;
+            }
+        }
+
+        &:last-child {
+            border-color: #fff !important;
+            box-shadow: none !important;
+        }
+
+        /* border-bottom: 0 !important; */
+        ion-label {
+            color: #fff !important;
+            padding-left: 10px;
+        }
+
+        ion-input {
+            color: #fff;
+            /* border-radius: 5px;
+            border: 1px solid #fff;
+            padding-left: 10px; */
+        }
+    }
+
+    button.button {
+        height: 50px;
+        box-shadow: none;
+        font-size: 17px;
+        background-color: #77dbff;
+        margin-top: 30px;
+    }
+
+    .login_with {
+        text-align: center;
+
+        p {
+            color: #fff;
+            font-size: 16px;
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 10px;
+        }
+    }
+
+    .list_text {
+        padding-bottom: 30px;
+
+        a {
+            float: left;
+            text-decoration: none;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        a+a {
+            float: right;
+        }
+
+        .clear {
+            clear: both;
+        }
+    }
+
+    ion-list {
+        margin-top: 50px !important;
+    }
+}

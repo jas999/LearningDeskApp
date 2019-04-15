@@ -1,0 +1,35 @@
+##File:
+$ ionic cordova plugin add cordova-plugin-file
+$ npm install --save @ionic-native/file@4
+
+##File Path:
+$ ionic cordova plugin add cordova-plugin-filepath
+$ npm install --save @ionic-native/file-path@4
+
+##File Transfer:
+$ ionic cordova plugin add cordova-plugin-file-transfer
+$ npm install --save @ionic-native/file-transfer@4
+
+##File Opener:
+$ ionic cordova plugin add cordova-plugin-file-opener2
+$ npm install --save @ionic-native/file-opener@4
+
+##Android Permissions
+$ ionic cordova plugin add cordova-plugin-android-permissions
+$ npm install --save @ionic-native/android-permissions@4
+
+##YouTube Video Player:
+$ ionic cordova plugin add cordova-plugin-youtube-video-player
+$ npm install --save @ionic-native/youtube-video-player@4
+
+##Facebook:
+ionic cordova plugin add cordova-plugin-facebook4 --variable APP_ID="1414151035506403" --variable APP_NAME="GetSocial"
+npm install --save @ionic-native/facebook@4
+
+## Social Sharing
+$ ionic cordova plugin add cordova-plugin-x-socialsharing
+$ npm install --save @ionic-native/social-sharing@4
+
+##
+$ ionic cordova plugin add cordova-plugin-googleplus --variable REVERSED_CLIENT_ID=389223069772-nju5fp6f903t5g51hj737jqke7val5a4.apps.googleusercontent.com
+$ npm install --save @ionic-native/google-plus@4

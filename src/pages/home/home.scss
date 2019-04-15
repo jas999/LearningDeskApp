@@ -1,0 +1,79 @@
+page-home {
+    .toolbar-background {
+        background: #77dbff;
+    }
+    .toolbar-title {
+        img {
+            width: 80px;
+            display: block;
+            margin: 0 auto;
+            position: relative;
+            left: -30px;
+        }
+    }
+    ion-content {
+        .banner {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+        .image_slide {
+            h3 {
+                font-size: 16px;
+                margin-top: 10px;
+            }
+            padding: 10px;
+            .imgs {
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 10px;
+                width: 130px;
+            }
+            .img_part {
+                position: relative;
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    left: 0;
+                    top: 0;
+                    background-color: rgba($color: #000000, $alpha: 0.4);
+                    background-image: url(../assets/imgs/play.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 40px;
+                }
+            }
+        }
+        .swiper-slide {
+            width: 130px;
+            position: relative;
+            height: 110px;
+            p {
+                margin: 3px 0 10px;
+                font-size: 12px;
+            }
+            img {
+                max-height: 75px;
+                display: block;
+                width: 100%;
+            }
+        }
+    }
+    ion-list {
+        ion-item {
+            ion-label {
+                white-space: normal
+            }
+            box-shadow: 0 5px 23px rgba(0, 0, 0, 0.21) !important;
+            border-radius: 3px;
+            overflow: hidden;
+            margin-bottom: 15px !important;
+            .item-inner {
+                border-bottom: 0 !important;
+            }
+        }
+    }
+}

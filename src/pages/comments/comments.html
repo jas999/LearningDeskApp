@@ -1,0 +1,44 @@
+<!--
+  Generated template for the CommentsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="ios-menu"></ion-icon>
+    </button>
+    <ion-title><img src="assets/imgs/logo.png" alt=""></ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-list padding>
+      <ion-item>
+          <ion-label color="primary" floating>Comment</ion-label>
+          <ion-textarea textarea id="article_text" class="article_text" [(ngModel)]="message" type="text"  rows="5"></ion-textarea>
+        </ion-item>
+        <button ion-button full round (click)="sendComment(message)">POST</button>
+    </ion-list>
+
+
+    <div class="comment-box">
+        <ion-card *ngFor="let comment of comments">
+          <ion-card-content>
+                <strong>{{comment.comment}}</strong>
+                <p>
+                 {{comment.createdDateTime | date : 'dd/MM/yyyy H:mm a'}}
+                </p>
+                <p>
+                  {{comment.createdBy.firstname}} {{comment.createdBy.lastname}}
+                 </p>
+          </ion-card-content>
+
+        </ion-card>
+      </div>
+
+
+
+    </ion-content>

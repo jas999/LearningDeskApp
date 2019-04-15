@@ -1,0 +1,82 @@
+<!--
+  Generated template for the ProfilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="ios-menu"></ion-icon>
+    </button>
+    <ion-title><img src="assets/imgs/logo.png" alt=""></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div class="profile_part" [style.backgroundImage]="'url(assets/imgs/profile_par.jpg)'">
+    <div class="profile_img">
+      <img src="assets/imgs/profile-picture-demo-7.jpg" alt="">
+    </div>
+  </div>
+  <div class="profile_detail">
+    <h3>{{firstname}} {{lastname}}</h3>
+    <p>{{emailId}}</p>
+  </div>
+  <!-- <ion-list> -->
+  <div class="course_list">
+    <h3>Main Course</h3>
+    <ion-item (click)="popup_1_open()">
+      <ion-label>{{course_1 || 'Main Course'}} </ion-label>
+    </ion-item>
+  </div>
+  <div class="course_list">
+    <h3>Secondry Course</h3>
+    <ion-item (click)="popup_2_open()">
+      <ion-label>{{course_2 || 'Secondry Course'}} </ion-label>
+    </ion-item>
+  </div>
+  <div class="course_list no_shadow">
+    <ion-item>
+      <ion-label>Subscribe to Newsletter</ion-label>
+      <ion-toggle [(ngModel)]="newsletter"></ion-toggle>
+    </ion-item>
+    <ion-item>
+      <ion-label>Receive Notifications</ion-label>
+      <ion-toggle [(ngModel)]="notifications"></ion-toggle>
+    </ion-item>
+  </div>
+  <button ion-button full round (click)="updateProfile()">Submit</button>
+  <!-- </ion-list> -->
+</ion-content>
+
+<div class="popup" [ngClass]="{'active':popup_1 == true}">
+  <div class="slect_list">
+    <div class="select_secton">
+      <a href="javascript:void(0)" (click)="updateSubCourse()">
+        <ion-icon name="md-close"></ion-icon>
+      </a>
+      <ion-list radio-group [(ngModel)]="mainCourse">
+        <ion-item *ngFor="let course of courseAndSubCourse">
+          <ion-label>{{course.name}}</ion-label>
+          <ion-checkbox value="{{course.id}}" (click)="selectCourse1(course)" [(ngModel)]="course.checked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>
+<div class="popup" [ngClass]="{'active':popup_2 == true}">
+  <div class="slect_list">
+    <div class="select_secton">
+      <a href="javascript:void(0)" (click)="change_sub()">
+        <ion-icon name="md-close"></ion-icon>
+      </a>
+      <ion-list radio-group [(ngModel)]="course_2">
+        <ion-item *ngFor="let subCourse of subCourses">
+          <ion-label>{{subCourse.name}}</ion-label>
+          <ion-checkbox value="{{subCourse.id}}" (click)="selectCourse2(subCourse)" [(ngModel)]="subCourse.checked"></ion-checkbox>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,119 @@
+<!--
+  Generated template for the AddItemPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="ios-menu"></ion-icon>
+    </button>
+    <ion-title><img src="assets/imgs/logo.png" alt=""></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="bookMarkForm" (ngSubmit)="add(bookMarkForm.value)" class="reg-form">
+    <div class="banner" [style.backgroundImage]="'url(assets/imgs/3283238.jpg)'">
+      <!-- <img src="assets/imgs/3283238.jpg" alt=""> -->
+    </div>
+    <div class="cover_part">
+      <ion-label>Cover Image</ion-label>
+      <div class="img_sectoin" (click)="openeditprofile()" [style.backgroundImage]="'url('+selected_img+')'">
+        <!-- <img [src]="selected_img" alt="" *ngIf="selected_img"> -->
+      </div>
+    </div>
+    <div class="cover_part">
+      <ion-item>
+        <ion-label color="primary" floating>Title</ion-label>
+        <ion-input type="text" [formControl]="title"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label color="primary" floating>Description</ion-label>
+        <ion-textarea [formControl]="description"></ion-textarea>
+      </ion-item>
+    </div>
+    <ion-list radio-group [formControl]="containsVideo" (ionChange)="video_sectoin()">
+      <ion-label>Content Contains Any Video?</ion-label>
+      <div>
+        <ion-item col-5>
+          <ion-label>Yes</ion-label>
+          <ion-radio checked [value]="'true'"></ion-radio>
+        </ion-item>
+        <ion-item col-5>
+          <ion-label>No</ion-label>
+          <ion-radio [value]="'false'"></ion-radio>
+        </ion-item>
+      </div>
+    </ion-list>
+    <ion-item *ngIf="containsVideo.value =='false'" class="doc_part" (click)="selectFile()">
+      <ion-label id="profile_image" color="primary"><img src="assets/imgs/doc.png" alt=""></ion-label>
+      <ion-label color="primary" style=" overflow: auto; word-break: break-word;  white-space: normal;">{{documentName}}
+      </ion-label>
+      <!-- <ion-input type="file" id="upload" (ionC)="imageFilePath_change()"></ion-input>-->
+    </ion-item>
+    <div class="cover_part" *ngIf="containsVideo.value =='true'">
+      <ion-item>
+        <ion-label color="primary" floating>Video Link</ion-label>
+        <ion-input type="text" [formControl]="videoLink"></ion-input>
+      </ion-item>
+    </div>
+    <div class="cover_part">
+    <ion-item>
+      <ion-label color="primary" floating>City</ion-label>
+      <ion-select [formControl]="cityId" multiple="false">
+        <ion-option [value]="city.id" *ngFor="let city of cities">{{city.name}}</ion-option>
+      </ion-select>
+    </ion-item>
+  </div>
+    <div class="course_list">
+      <h3>Main Course</h3>
+      <ion-item (click)="popup_1_open()">
+        <ion-label>{{course_1 || 'Main Course'}} </ion-label>
+      </ion-item>
+    </div>
+    <div class="course_list">
+      <h3>Secondry Course</h3>
+      <ion-item (click)="popup_2_open()">
+        <ion-label>{{course_2_name || 'Secondry Course'}} </ion-label>
+      </ion-item>
+    </div>
+    <div class="cover_part">
+      <button ion-button full type="submit">SUBMIT</button>
+    </div>
+  </form>
+
+ <!-- <button ion-button full (click)="test()">SUBMIT</button>-->
+</ion-content>
+
+<div class="popup" [ngClass]="{'active':popup_1 == true}">
+  <div class="slect_list">
+    <div class="select_secton">
+      <a href="javascript:void(0)" (click)="close()">
+        <ion-icon name="md-close"></ion-icon>
+      </a>
+      <ion-list radio-group [(ngModel)]="mainCourse" (ionChange)="updateSubCourse()">
+        <ion-item *ngFor="let course of courseAndSubCourse">
+          <ion-label>{{course.name}}</ion-label>
+          <ion-radio value="{{course.id}}"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>
+<div class="popup" [ngClass]="{'active':popup_2 == true}">
+  <div class="slect_list">
+    <div class="select_secton">
+      <a href="javascript:void(0)" (click)="close()">
+        <ion-icon name="md-close"></ion-icon>
+      </a>
+      <ion-list radio-group [(ngModel)]="course_2" (ionChange)="change_sub()">
+        <ion-item *ngFor="let subCourse of subCourses">
+          <ion-label>{{subCourse.name}}</ion-label>
+          <ion-radio value="{{subCourse.id}}"></ion-radio>
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</div>
